@@ -15,7 +15,7 @@ for (i = 0; i < data.length; i++) {
     img.setAttribute('class', 'card--img');
     li.append(img);
     img.setAttribute('width', '256');
-    img.src = data[i].sprites.other["official-artwork"].front_default
+    img.src = data[i].sprites.other["official-artwork"].front_default;
     li.append(img);
 
     const newUl = document.createElement('ul');
@@ -29,6 +29,25 @@ for (i = 0; i < data.length; i++) {
     newLi.style.listStyleType = 'none';
     newUl.append(newLi);
     }
+    const newLiTwo = document.createElement('li');
+    const arr = ['GAMES APPEARED: ', Math.floor(Math.random() * 100)];
+    const str = arr.join("");
+    newLiTwo.innerText = str;
+    newLiTwo.style.listStyleType = 'none';
+    newUl.append(newLiTwo);
+
+    
+
+
+    let toggle = true;
+    img.addEventListener('click', function(){
+    toggle = !toggle;
+    if(toggle){
+        img.src = 'img//one.png'; 
+    }else{
+        img.src = 'img//two.jpg';
+    }
+    })
 }
 
 
